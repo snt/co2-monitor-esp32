@@ -1,0 +1,51 @@
+author: Kentaro Shinto
+description: CO2 sensor
+# arch: PLATFORM
+version: 1.0
+manifest_version: 2020-01-29
+libs_version: ${mos.version}
+modules_version: ${mos.version}
+mongoose_os_version: ${mos.version}
+
+config_schema:
+  - ["mqtt.server", "192.168.10.58:1883"]
+  - ["mqtt.enable", true]
+  - ["i2c.enable", false]
+  - ["app", "o", {"title":"app config"}]
+  - ["app.topic", "s", "/co2/2", {"title","topic to publish"}]
+  - ["app.qos", "i", 0, {"title": "QoS"}]
+
+tags:
+  - js
+
+filesystem:
+  - fs
+
+libs:
+  - origin: https://github.com/mongoose-os-libs/sntp
+  - origin: https://github.com/mongoose-os-libs/rpc-service-config
+  - origin: https://github.com/mongoose-os-libs/rpc-service-fs
+  - origin: https://github.com/mongoose-os-libs/rpc-uart
+  - origin: https://github.com/mongoose-os-libs/wifi
+  - origin: https://github.com/mongoose-os-libs/mjs
+  - origin: https://github.com/mongoose-os-libs/mqtt
+  - origin: https://github.com/mongoose-os-libs/boards
+  - origin: https://github.com/mongoose-os-libs/ca-bundle
+  - origin: https://github.com/mongoose-os-libs/fstab
+  - origin: https://github.com/mongoose-os-libs/provision
+  - origin: https://github.com/mongoose-os-libs/rpc-mqtt
+  - origin: https://github.com/mongoose-os-libs/ota-http-server
+#  - origin: https://github.com/mongoose-os-libs/config
+ # - origin: https://github.com/mongoose-os-libs/event
+
+ 
+  # - origin: https://github.com/mongoose-os-libs/dash
+  # - origin: https://github.com/mongoose-os-libs/http-server
+  # - origin: https://github.com/mongoose-os-libs/rpc-service-gpio
+  # - origin: https://github.com/mongoose-os-libs/rpc-service-i2c
+  # - origin: https://github.com/mongoose-os-libs/rpc-ws
+  # - origin: https://github.com/mongoose-os-libs/rpc-loopback
+  # - origin: https://github.com/mongoose-os-libs/rpc-service-ota
+  # - origin: https://github.com/mongoose-os-libs/rpc-service-wifi
+  # - origin: https://github.com/mongoose-os-libs/spi
+  # - origin: https://github.com/mongoose-os-libs/i2c

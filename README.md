@@ -15,7 +15,7 @@ ESP32 with MH-Z19B dev Board to publish CO<sub>2</sub> concentration (ppm) to MQ
 ## Build
 
 ```bash
-mos build
+mos build  --platform esp32
 ```
 
 ## Write to ESP32
